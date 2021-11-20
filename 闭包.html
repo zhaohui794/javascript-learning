@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        //闭包：函数嵌套函数，内部函数就是闭包
+        //正常情况下，函数执行完成，内部变量会销毁
+        //(销毁：释放内存空间)
+        //内部函数没有执行完成，外部函数又不会被销毁
+        //应用：封装一段代码   可以实现模块化
+        //函数拥有的外部变量的引用，在函数返回时，该变量仍然处于活跃状态
+        // 闭包作为一个函数返回时，其执行上下文不会被销毁，仍然处于执行上下文的环境中
+        在javascrip中存在一种内部函数，即函数声明和函数表达式可以位于另一个函数的函数体内，
+        在内部函数中可以访问外部函数生命的变量，当这个内部函数在包含他们的外部函数之外被调用时，就会形成闭包。
+
+        */
+        
+        // function fn() {
+        //     var max = 10;
+        //     return function bar(x) {
+        //         if(x > max){
+        //             console.log(x)
+        //         }
+        //     }
+        // }
+        // var f1 = fn();
+        // f1(11);
+
+                // 调用函数，返回值被赋值给 x
+        var x = myFunction(7,8);
+        
+        function myFunction(a, b) {
+            return a * b;                // 函数返回 a 和 b 的乘积
+        }
+       myFunction(10,2)
+    </script>
+</body>
+</html>
