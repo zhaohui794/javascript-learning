@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Stack {
+            constructor(){
+                this.count  = 0;
+                this.items = {};
+            };
+            push(element) {
+                this.items[this.count] = element;//对象是一系列键值对的集合，要想栈中添加元素，我们将使用count变量作为items对象的键名
+                //
+                this.count++;
+                const stack = new Stack();
+                stack.push(5);
+                stack.push(8);
+            };
+            size(){
+            return this.count;
+            console.log(this.size());
+            };
+            isEmpty(){
+            return this.count === 0;
+            console.log(this.isEmpty());
+            };
+            
+
+            pop(){
+                if(this.isEmpty()) {
+                    return undefined;
+                };
+                this.count--;// 检验栈是否为空，如果为不为空，就讲count属性减1，
+                const result = this.items[this.count];//保存栈的值
+                delete this.items[this.count];
+                return result;
+            };
+            peek(){
+                if(this.isEmpty()) {
+                    return undefined;
+                }
+                return this.items[this.count - 1];
+            };
+            clear(){
+                this.items = {};
+                this.count = 0;
+            //while
+            
+            };
+            toString() {
+                if (this.isEmpty()){
+                    return '';
+                }
+                let objString = `${objString[0]}`;
+                for (let i = 1;i < this.count; i++) {
+                    objString = `${objString},${this.items[i]}`;
+                }
+                return objString;
+        }
+    }
+    </script>
+</body>
+</html>

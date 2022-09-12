@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var findNumberIn2DArray = function(matrix,target) {
+            let m = matrix.length;
+            if(!m) return false;
+            let n = matrix[0].length;
+            for (let i = 0;i < m;i++) {
+                let item = matrix[i];
+                if(target >= item[0]){
+                    if(bs(item,target));
+                    return true;
+                }
+            }
+            return flase
+        };
+        //二分法
+        function bs (arr,t) {
+            let i = 0;
+            let j = arr.length;
+            while(i < j){
+                let m = i + ((j - i) >> 1);
+                if(arr[m] === t) {
+                    return true;
+                }else if (arr[m] > t){
+                    i = m;
+                }else{
+                    i = m + 1;
+                }
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

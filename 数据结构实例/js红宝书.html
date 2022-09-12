@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //第三章string类型
+     let age = 11;
+     let ageAsString = age.toString();
+         console.log(age);
+     let num = 10;
+    
+     //null he undefined 值没有toString()方法
+     console.log(num.toString());
+    
+     // 不确定一个知识不是 null 或者undefined 可以使用String()转型函数
+     console.log(String(num));
+     let myMultiLineString = 'first line\nsecond line';
+     let myMultiLineTemplate = `first line 
+     second line`;
+     console.log(myMultiLineString);
+     console.log(myMultiLineTemplate);
+    
+     //模板自变量在定义模板
+    let pageHTML =` 
+    <div>
+        <a href="#">
+        <span></span>    
+    </div>`
+
+    //字符串插值
+    let value = 5;
+    let exponent = 'second';
+    let interpolateString = value + ' to the '+ exponent +' power is' +(value * value);
+    
+    //模板自变量
+    let interpolateTemplateLiteral = 
+    `${value} to the ${ exponent } power is ${value * value} `;
+    console.log(interpolateString);
+    console.log(interpolateTemplateLiteral);
+    
+    //将表达式转换为字符串时会调用tostring（）；
+    console.log(`hello,${'World'}!`);
+    let foo = { toString: () =>'World'};
+    console.log(`hello,${ foo }!`);
+   
+    //在插值表达式中可以调用函数和方法：
+    function capitalize(word) {
+         return `${ word[0].toUpperCase() }${ word.slice(1) }`;
+     }
+         console.log(`${ capitalize('hello') }, ${ capitalize('world') }!`); 
+    
+         //模板也可以插入自己之前的值：
+     let va = '';
+    function append(){
+        va = `${va}abc`;
+        console.log(va);
+    }
+       append();
+    
+    //模板自变量标签函数
+    let a = 6;
+    let b = 9;
+    function simpleTag(st,av,bv,cv){
+        console.log(st);
+       for(const v of vs){
+           console.log(v);
+       }
+        return 'foobar';
+    }
+    //原始字符串    可以使用默认的String.raw标签
+    function printRaw(strings) {
+      console.log('Actual characters:');
+      for (const string of strings) {
+      console.log(string);
+    }
+      console.log('Escaped characters;');
+      for (const rawString of strings.raw) {
+      console.log(rawString);
+      }
+     }
+      printRaw`\u00A9${ 'and' }\n`;
+      //迭代函数
+      const isEven = x => x % 2 === 0;
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

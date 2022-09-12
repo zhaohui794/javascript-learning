@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ 
+         //ES6中的箭头函数
+        //  const ccc = (列表参数) => {
+        //  }
+        //两个参数时
+        const sum = (num1,num2) => {
+            return num1 + num2;
+        }
+        //一个参数时 小括号可以省略 
+        const pow = num => {
+            return num * num;
+        }
+        //z只有一行代码的时候
+        const power = (num1,num2) => num1 + num2;
+        console.log(power(20,30));
+        //函数中的
+        const demo = () =>console.log('hello word');
+        console.log(demo());
+        //箭头函数什么时候使用？
+        //当一个函数使用另一个参数函数时
+        //箭头函数的this是向外层作用域中，一层层查找this，直到有this的定义
+         const obj = {
+             aaa(){
+                 setTimeout(function(){
+                     console.log(this);//window
+                 })
+                 setTimeout(() => {
+                     console.log(this);//obj
+                 })
+             }
+         }
+         //普通函数
+         function foo(){
+             setTimeout(function(){
+                 console.log('id',this.id);
+             },100)
+         }
+         var id = 1;
+
+         foo.call({ id: 2 });
+         //箭头函数  箭头函数无this的强绑定，
+         //一般在定义函数的时候确定而不是在执行函数的时候确定
+        function foo(){
+             setTimeout(() => {
+                 console.log('id',this.id);
+             },100);
+         }
+         var id = 1;
+         foo.call({ id:2});       
+ 
+</script>
+        
+</body>
+</html>
