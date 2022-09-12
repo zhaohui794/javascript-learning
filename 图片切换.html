@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="qyc">犬夜叉</button>
+    <button id="ssw">杀生丸</button><br>
+    <img src="/images/images/logo-footer.png" alt="" title="犬夜叉">
+
+    <script>
+        //修改元素属性
+        var qyc = document.getElementById('qyc');
+        var ssw = document.getElementById('ssw');
+        var img = document.getElementById('img');
+        qyc.onclick = function(){
+            img.src='/images/images/logo-footer.png';
+            img.title = '犬夜叉';
+        }
+        ssw.onclick = function(){
+            img.src='/images/images/logo-footer.png';
+            img.title = '杀生丸'
+        }
+    </script>
+</body>
+</html>
